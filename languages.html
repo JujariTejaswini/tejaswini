@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multilingual Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Welcome to our page! </h1>
+  <p id="paragraph">This is a multilingual page.</p>
+  <select id="language-select">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+    <option value="hi">Hindi</option>
+    <option value="pt">Portuguese</option>
+    <option value="zh">Chinese</option>
+    <option value="fr">French</option>
+  </select>
+
+  <script>
+    const languageSelect = document.getElementById('language-select');
+    const titleElement = document.getElementById('title');
+    const paragraphElement = document.getElementById('paragraph');
+
+    languageSelect.addEventListener('change', (e) => {
+      const language = e.target.value;
+      switch (language) {
+        case 'en':
+          titleElement.textContent = 'Welcome to our page!';
+          paragraphElement.textContent = 'This is a multilingual page.';
+          break;
+        case 'es':
+          titleElement.textContent = 'Bienvenido a nuestra página!';
+          paragraphElement.textContent = 'Esta es una página multilingüe.';
+          break;
+        case 'hi':
+          titleElement.textContent = 'हमारे पेज पर स्वागत है!';
+          paragraphElement.textContent = 'यह एक बहुभाषी पेज है।';
+          break;
+        case 'pt':
+          titleElement.textContent = 'Bem-vindo à nossa página!';
+          paragraphElement.textContent = 'Esta é uma página multilíngue.';
+          break;
+        case 'zh':
+          titleElement.textContent = '欢迎来到我们的页面!';
+          paragraphElement.textContent = '这是一个多语言页面。';
+          break;
+        case 'fr':
+          titleElement.textContent = 'Bienvenue sur notre page!';
+          paragraphElement.textContent = 'Ceci est une page multilingue.';
+          break;
+        default:
+          titleElement.textContent = '';
+          paragraphElement.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>
